@@ -735,8 +735,8 @@ import sohilaAsset from "@/assets/team/sohila.png.asset.json";
 import groupAsset from "@/assets/team/group.jpg.asset.json";
 
 const team = [
-  { name: "Shahd Rady", role: "Co-founder", photo: shahdAsset.url },
-  { name: "Melessia Medhat", role: "Engineering", photo: melessiaAsset.url },
+  { name: "Shahd Rady", role: "Co-founder", photo: melessiaAsset.url },
+  { name: "Melessia Medhat", role: "Engineering", photo: shahdAsset.url },
   { name: "Haneen Mostafa", role: "Sustainability", photo: haneenAsset.url },
   { name: "Sohila Emad", role: "Operations", photo: sohilaAsset.url },
 ];
@@ -780,7 +780,7 @@ function Team() {
                 src={m.photo}
                 alt={m.name}
                 loading="lazy"
-                className="relative w-full h-full rounded-full object-cover object-top ring-2 ring-primary/30 group-hover:ring-primary/70 shadow-glow group-hover:scale-[1.03] transition-all duration-300"
+                className="relative w-full h-full rounded-full object-cover object-top bg-white ring-2 ring-primary/30 group-hover:ring-primary/70 shadow-glow group-hover:scale-[1.03] transition-all duration-300"
               />
             </div>
             <div className="mt-5 font-semibold tracking-tight text-lg">{m.name}</div>
