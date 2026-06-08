@@ -993,6 +993,7 @@ export function SolixLanding() {
       <Roadmap />
       <Cost />
       <Team />
+      <Events />
       <Contact />
       <Footer />
       <Toaster richColors position="top-right" />
