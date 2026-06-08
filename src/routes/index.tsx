@@ -1,29 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SolixLanding } from "@/components/solix/SolixLanding";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "SOLIX — Powered by Sun, Cooled by Nature" },
+      {
+        name: "description",
+        content:
+          "Smart solar-powered shading pods for public spaces. SOLIX generates clean energy, cools outdoor areas, and powers the cities of tomorrow.",
+      },
+      { property: "og:title", content: "SOLIX — Smart Solar Shading" },
+      {
+        property: "og:description",
+        content:
+          "Solar-powered smart shading pods for smart cities, schools, parks and public spaces.",
+      },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
-  component: Index,
+  component: SolixLanding,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
