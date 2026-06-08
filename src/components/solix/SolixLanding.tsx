@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import podImage from "@/assets/solix-pod.jpg";
+import solixLogo from "@/assets/solix-logo.png.asset.json";
 import pod1 from "@/assets/refs/pod-1.png";
 import pod2 from "@/assets/refs/pod-2.png";
 import pod3 from "@/assets/refs/pod-3.png";
@@ -100,11 +101,8 @@ function Nav({ dark, toggle }: { dark: boolean; toggle: () => void }) {
     <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}>
       <div className={`mx-auto max-w-7xl px-6 md:px-10 ${scrolled ? "glass rounded-2xl shadow-soft" : ""} transition-all`}>
         <div className="flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-2 font-bold text-lg tracking-tight">
-            <span className="relative inline-flex size-8 items-center justify-center rounded-lg bg-gradient-hero shadow-glow">
-              <Sun className="size-4 text-white" />
-            </span>
-            <span className="gradient-text text-xl">SOLIX</span>
+          <a href="#top" className="flex items-center gap-2 font-bold text-lg tracking-tight" aria-label="SOLIX home">
+            <img src={solixLogo.url} alt="SOLIX logo" className="h-10 md:h-12 w-auto object-contain" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             {links.map((l) => (
@@ -896,10 +894,7 @@ function Footer() {
         <div className="grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
           <div>
             <div className="flex items-center gap-2">
-              <span className="size-9 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow">
-                <Sun className="size-4 text-white" />
-              </span>
-              <span className="text-xl font-bold gradient-text">SOLIX</span>
+              <img src={solixLogo.url} alt="SOLIX logo" className="h-12 w-auto object-contain" />
             </div>
             <p className="mt-4 text-sm text-muted-foreground max-w-sm">Powered by Sun, Cooled by Nature — smart solar shading for public spaces.</p>
           </div>
