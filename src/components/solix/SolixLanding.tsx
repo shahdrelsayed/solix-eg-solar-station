@@ -731,7 +731,6 @@ function Cost() {
 const team = [
   { name: "Shahd Rady", role: "Co-founder" },
   { name: "Melessia Medhat", role: "Engineering" },
-  { name: "Mariam Waled", role: "Product Design" },
   { name: "Haneen Mostafa", role: "Sustainability" },
   { name: "Sohila Emad", role: "Operations" },
 ];
