@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "SOLIX — Powered by Sun, Cooled by Nature" },
       { name: "description", content: "SOLIX builds solar-powered smart shading pods that generate clean energy, reduce heat, and create comfortable outdoor public spaces for cities of tomorrow." },
       { name: "author", content: "SOLIX" },
-      { name: "theme-color", content: "#0B3D91" },
+      { name: "theme-color", content: "#22C55E" },
       { property: "og:title", content: "SOLIX — Smart Solar-Powered Shading" },
       { property: "og:description", content: "Solar shading pods that generate clean energy, cool public spaces, and power tomorrow's smart cities." },
       { property: "og:type", content: "website" },
