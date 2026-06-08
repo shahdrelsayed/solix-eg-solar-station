@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import solixLogo from "../assets/solix-logo.png.asset.json";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -78,23 +77,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SOLIX — Powered by Sun, Cooled by Nature" },
+      { title: "SOLIX.eg" },
       { name: "description", content: "SOLIX builds solar-powered smart shading pods that generate clean energy, reduce heat, and create comfortable outdoor public spaces for cities of tomorrow." },
       { name: "author", content: "SOLIX" },
       { name: "theme-color", content: "#22C55E" },
-      { property: "og:title", content: "SOLIX — Smart Solar-Powered Shading" },
-      { property: "og:description", content: "Solar shading pods that generate clean energy, cool public spaces, and power tomorrow's smart cities." },
+      { property: "og:title", content: "SOLIX.eg" },
+      { property: "og:description", content: "SOLIX builds solar-powered smart shading pods that generate clean energy, reduce heat, and create comfortable outdoor public spaces for cities of tomorrow." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "SOLIX.eg" },
+      { name: "twitter:description", content: "SOLIX builds solar-powered smart shading pods that generate clean energy, reduce heat, and create comfortable outdoor public spaces for cities of tomorrow." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/nCCb6S80iIeZo8FE04sKJjIofAt2/social-images/social-1780931804741-photo_5852809130798681848_y.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/nCCb6S80iIeZo8FE04sKJjIofAt2/social-images/social-1780931804741-photo_5852809130798681848_y.webp" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/png", href: solixLogo.url },
-      { rel: "apple-touch-icon", href: solixLogo.url },
     ],
   }),
   shellComponent: RootShell,
