@@ -14,6 +14,10 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import podImage from "@/assets/solix-pod.jpg";
+import pod1 from "@/assets/refs/pod-1.png";
+import pod2 from "@/assets/refs/pod-2.png";
+import pod3 from "@/assets/refs/pod-3.png";
+import pod4 from "@/assets/refs/pod-4.png";
 
 /* ---------- Theme toggle ---------- */
 function useTheme() {
@@ -411,6 +415,43 @@ function Solution() {
               </div>
               <h3 className="mt-4 font-semibold">{f.title}</h3>
               <p className="mt-1.5 text-sm text-muted-foreground">{f.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-20">
+        <div className="text-center max-w-2xl mx-auto">
+          <SectionEyebrow>Design References</SectionEyebrow>
+          <h3 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Concepts in the real world</h3>
+          <p className="mt-3 text-muted-foreground">Inspiration and reference configurations of the SOLIX pod across bus stops, mobility hubs, parks and urban plazas.</p>
+        </div>
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { src: pod1, label: "Campus Stop" },
+            { src: pod2, label: "Mobility Hub" },
+            { src: pod3, label: "City Pod" },
+            { src: pod4, label: "Smart Bench" },
+          ].map((img, i) => (
+            <motion.div
+              key={img.label}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              whileHover={{ y: -6 }}
+              className="group relative aspect-[4/3] rounded-2xl overflow-hidden glass shadow-soft border border-border/60"
+            >
+              <img
+                src={img.src}
+                alt={`SOLIX pod reference — ${img.label}`}
+                loading="lazy"
+                className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                <span className="text-sm font-semibold">{img.label}</span>
+                <span className="text-[10px] uppercase tracking-wider glass px-2 py-1 rounded-full">Concept</span>
+              </div>
             </motion.div>
           ))}
         </div>
