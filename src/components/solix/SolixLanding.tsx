@@ -730,7 +730,15 @@ import shahdAsset from "@/assets/team/shahd.png.asset.json";
 import melessiaAsset from "@/assets/team/melessia.png.asset.json";
 import haneenAsset from "@/assets/team/haneen.png.asset.json";
 import sohilaAsset from "@/assets/team/sohila.png.asset.json";
-import groupAsset from "@/assets/team/group.jpg.asset.json";
+import event269 from "@/assets/events/event-269.jpg.asset.json";
+import event270 from "@/assets/events/event-270.jpg.asset.json";
+import event271 from "@/assets/events/event-271.jpg.asset.json";
+import event273 from "@/assets/events/event-273.jpg.asset.json";
+import event274 from "@/assets/events/event-274.jpg.asset.json";
+import event275 from "@/assets/events/event-275.jpg.asset.json";
+import event276 from "@/assets/events/event-276.jpg.asset.json";
+import event277 from "@/assets/events/event-277.jpg.asset.json";
+import event278 from "@/assets/events/event-278.jpg.asset.json";
 
 const team = [
   { name: "Shahd Rady", role: "Co-founder", photo: melessiaAsset.url },
@@ -746,21 +754,6 @@ function Team() {
         <SectionEyebrow>The team</SectionEyebrow>
         <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">Engineers and designers building a cooler future.</h2>
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mt-12 relative rounded-3xl overflow-hidden border border-border/60 shadow-glow"
-      >
-        <img
-          src={groupAsset.url}
-          alt="SOLIX team celebrating at The Company Program"
-          className="w-full h-[280px] md:h-[420px] object-cover object-center"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-      </motion.div>
       <div className="mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
         {team.map((m, i) => (
           <motion.div
