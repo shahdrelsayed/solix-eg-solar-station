@@ -730,7 +730,15 @@ import shahdAsset from "@/assets/team/shahd.png.asset.json";
 import melessiaAsset from "@/assets/team/melessia.png.asset.json";
 import haneenAsset from "@/assets/team/haneen.png.asset.json";
 import sohilaAsset from "@/assets/team/sohila.png.asset.json";
-import groupAsset from "@/assets/team/group.jpg.asset.json";
+import event269 from "@/assets/events/event-269.jpg.asset.json";
+import event270 from "@/assets/events/event-270.jpg.asset.json";
+import event271 from "@/assets/events/event-271.jpg.asset.json";
+import event273 from "@/assets/events/event-273.jpg.asset.json";
+import event274 from "@/assets/events/event-274.jpg.asset.json";
+import event275 from "@/assets/events/event-275.jpg.asset.json";
+import event276 from "@/assets/events/event-276.jpg.asset.json";
+import event277 from "@/assets/events/event-277.jpg.asset.json";
+import event278 from "@/assets/events/event-278.jpg.asset.json";
 
 const team = [
   { name: "Shahd Rady", role: "Co-founder", photo: melessiaAsset.url },
@@ -746,21 +754,6 @@ function Team() {
         <SectionEyebrow>The team</SectionEyebrow>
         <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">Engineers and designers building a cooler future.</h2>
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mt-12 relative rounded-3xl overflow-hidden border border-border/60 shadow-glow"
-      >
-        <img
-          src={groupAsset.url}
-          alt="SOLIX team celebrating at The Company Program"
-          className="w-full h-[280px] md:h-[420px] object-cover object-center"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-      </motion.div>
       <div className="mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
         {team.map((m, i) => (
           <motion.div
@@ -796,6 +789,62 @@ function Team() {
 
 /* ---------- Contact ---------- */
 function Contact() {
+  return ContactImpl();
+}
+
+const eventGallery = [
+  { src: event275.url, caption: "Solix.eg exhibition booth" },
+  { src: event276.url, caption: "Climate Leaders 3 — Final Competition" },
+  { src: event269.url, caption: "Project showcase with industry leaders" },
+  { src: event278.url, caption: "INJAZ Egypt — The Company Program pitch" },
+  { src: event273.url, caption: "Judging panel presentation" },
+  { src: event271.url, caption: "Startup showcase day" },
+  { src: event270.url, caption: "Achievement zone — innovation expo" },
+  { src: event277.url, caption: "Solix.eg booth setup" },
+  { src: event274.url, caption: "Smart Solar Station prototype on display" },
+];
+
+function Events() {
+  return (
+    <Section id="events">
+      <div className="text-center max-w-2xl mx-auto">
+        <SectionEyebrow>Highlights</SectionEyebrow>
+        <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">Competitions & Events</h2>
+        <p className="mt-4 text-muted-foreground">
+          Moments from our journey — pitching, exhibiting, and representing Solix at competitions and innovation events.
+        </p>
+      </div>
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {eventGallery.map((e, i) => (
+          <motion.figure
+            key={e.src}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+            whileHover={{ y: -6 }}
+            className="group relative overflow-hidden rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-[0_24px_60px_-20px_color-mix(in_oklab,var(--primary)_45%,transparent)] hover:border-primary/40 transition-all"
+          >
+            <div className="aspect-[4/3] overflow-hidden">
+              <img
+                src={e.src}
+                alt={e.caption}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+            </div>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-background/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <figcaption className="absolute bottom-0 left-0 right-0 p-4 text-sm font-medium text-foreground translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+              {e.caption}
+            </figcaption>
+          </motion.figure>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function ContactImpl() {
   const [submitting, setSubmitting] = useState(false);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -944,6 +993,7 @@ export function SolixLanding() {
       <Roadmap />
       <Cost />
       <Team />
+      <Events />
       <Contact />
       <Footer />
       <Toaster richColors position="top-right" />
