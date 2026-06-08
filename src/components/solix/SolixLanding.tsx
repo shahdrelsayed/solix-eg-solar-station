@@ -728,16 +728,18 @@ function Cost() {
 }
 
 /* ---------- Team ---------- */
-const team = [
-  { name: "Shahd Rady", role: "Co-founder" },
-  { name: "Melessia Medhat", role: "Engineering" },
-  { name: "Haneen Mostafa", role: "Sustainability" },
-  { name: "Sohila Emad", role: "Operations" },
-];
+import shahdAsset from "@/assets/team/shahd.png.asset.json";
+import melessiaAsset from "@/assets/team/melessia.png.asset.json";
+import haneenAsset from "@/assets/team/haneen.png.asset.json";
+import sohilaAsset from "@/assets/team/sohila.png.asset.json";
+import groupAsset from "@/assets/team/group.jpg.asset.json";
 
-function initials(name: string) {
-  return name.split(" ").map((p) => p[0]).slice(0, 2).join("");
-}
+const team = [
+  { name: "Shahd Rady", role: "Co-founder", photo: shahdAsset.url },
+  { name: "Melessia Medhat", role: "Engineering", photo: melessiaAsset.url },
+  { name: "Haneen Mostafa", role: "Sustainability", photo: haneenAsset.url },
+  { name: "Sohila Emad", role: "Operations", photo: sohilaAsset.url },
+];
 
 function Team() {
   return (
@@ -746,7 +748,22 @@ function Team() {
         <SectionEyebrow>The team</SectionEyebrow>
         <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">Engineers and designers building a cooler future.</h2>
       </div>
-      <div className="mt-16 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-12 relative rounded-3xl overflow-hidden border border-border/60 shadow-glow"
+      >
+        <img
+          src={groupAsset.url}
+          alt="SOLIX team celebrating at The Company Program"
+          className="w-full h-[280px] md:h-[420px] object-cover object-center"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+      </motion.div>
+      <div className="mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
         {team.map((m, i) => (
           <motion.div
             key={m.name}
@@ -755,12 +772,18 @@ function Team() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.06 }}
             whileHover={{ y: -8 }}
-            className="group rounded-3xl p-6 bg-card border border-border/60 hover:border-primary/40 hover:shadow-glow transition-all text-center"
+            className="group rounded-3xl p-6 glass border border-border/60 hover:border-primary/50 hover:shadow-[0_20px_60px_-15px_color-mix(in_oklab,var(--primary)_55%,transparent)] transition-all text-center"
           >
-            <div className="mx-auto aspect-square w-full max-w-[180px] rounded-2xl bg-gradient-hero flex items-center justify-center text-white text-3xl font-black shadow-glow group-hover:scale-[1.03] transition-transform">
-              {initials(m.name)}
+            <div className="relative mx-auto aspect-square w-full max-w-[180px]">
+              <div className="absolute inset-0 rounded-full bg-gradient-hero opacity-0 group-hover:opacity-70 blur-2xl transition-opacity" />
+              <img
+                src={m.photo}
+                alt={m.name}
+                loading="lazy"
+                className="relative w-full h-full rounded-full object-cover object-top ring-2 ring-primary/30 group-hover:ring-primary/70 shadow-glow group-hover:scale-[1.03] transition-all duration-300"
+              />
             </div>
-            <div className="mt-5 font-semibold">{m.name}</div>
+            <div className="mt-5 font-semibold tracking-tight text-lg">{m.name}</div>
             <div className="text-xs text-muted-foreground">{m.role}</div>
             <div className="mt-4 flex items-center justify-center gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
               <a href="#" aria-label={`${m.name} on LinkedIn`} onClick={(e) => e.preventDefault()} className="size-8 rounded-full glass inline-flex items-center justify-center hover:scale-110 transition-transform"><Linkedin className="size-3.5" /></a>
