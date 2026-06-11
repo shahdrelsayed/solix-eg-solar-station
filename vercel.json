@@ -1,1 +1,10 @@
-{}
+{
+  "version": 2,
+  "framework": "nitro",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/nitro"
+    }
+  ]
+}
