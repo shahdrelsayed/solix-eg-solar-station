@@ -14,7 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import podImage from "@/assets/solix-pod.jpg";
-import solixLogo from "@/assets/solix-logo.png.asset.json";
+import solixLogo from "@/assets/solix-logo.png";
 import pod1 from "@/assets/refs/pod-1.png";
 import pod2 from "@/assets/refs/pod-2.png";
 import pod3 from "@/assets/refs/pod-3.png";
@@ -102,7 +102,7 @@ function Nav({ dark, toggle }: { dark: boolean; toggle: () => void }) {
       <div className={`mx-auto max-w-7xl px-6 md:px-10 ${scrolled ? "glass rounded-2xl shadow-soft" : ""} transition-all`}>
         <div className="flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2 font-bold text-lg tracking-tight" aria-label="SOLIX home">
-            <img src={solixLogo.url} alt="SOLIX logo" className="h-10 md:h-12 w-auto object-contain" />
+            <img src={solixLogo} alt="SOLIX logo" className="h-10 md:h-12 w-auto object-contain" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             {links.map((l) => (
@@ -726,25 +726,25 @@ function Cost() {
 }
 
 /* ---------- Team ---------- */
-import shahdAsset from "@/assets/team/shahd.png.asset.json";
-import melessiaAsset from "@/assets/team/melessia.png.asset.json";
-import haneenAsset from "@/assets/team/haneen.png.asset.json";
-import sohilaAsset from "@/assets/team/sohila.png.asset.json";
-import event269 from "@/assets/events/event-269.jpg.asset.json";
-import event270 from "@/assets/events/event-270.jpg.asset.json";
-import event271 from "@/assets/events/event-271.jpg.asset.json";
-import event273 from "@/assets/events/event-273.jpg.asset.json";
-import event274 from "@/assets/events/event-274.jpg.asset.json";
-import event275 from "@/assets/events/event-275.jpg.asset.json";
-import event276 from "@/assets/events/event-276.jpg.asset.json";
-import event277 from "@/assets/events/event-277.jpg.asset.json";
-import event278 from "@/assets/events/event-278.jpg.asset.json";
+import shahdAsset from "@/assets/team/shahd.png";
+import melessiaAsset from "@/assets/team/melessia.png";
+import haneenAsset from "@/assets/team/haneen.png";
+import sohilaAsset from "@/assets/team/sohila.png";
+import event269 from "@/assets/events/event-269.jpg";
+import event270 from "@/assets/events/event-270.jpg";
+import event271 from "@/assets/events/event-271.jpg";
+import event273 from "@/assets/events/event-273.jpg";
+import event274 from "@/assets/events/event-274.jpg";
+import event275 from "@/assets/events/event-275.jpg";
+import event276 from "@/assets/events/event-276.jpg";
+import event277 from "@/assets/events/event-277.jpg";
+import event278 from "@/assets/events/event-278.jpg";
 
 const team = [
-  { name: "Shahd Rady", role: "Co-founder", photo: melessiaAsset.url },
-  { name: "Melessia Medhat", role: "Engineering", photo: shahdAsset.url },
-  { name: "Haneen Mostafa", role: "Sustainability", photo: haneenAsset.url },
-  { name: "Sohila Emad", role: "Operations", photo: sohilaAsset.url },
+  { name: "Shahd Rady", role: "Co-founder", photo: melessiaAsset },
+  { name: "Melessia Medhat", role: "Engineering", photo: shahdAsset },
+  { name: "Haneen Mostafa", role: "Sustainability", photo: haneenAsset },
+  { name: "Sohila Emad", role: "Operations", photo: sohilaAsset },
 ];
 
 function Team() {
@@ -793,15 +793,15 @@ function Contact() {
 }
 
 const eventGallery = [
-  { src: event275.url, caption: "Solix.eg exhibition booth" },
-  { src: event276.url, caption: "Climate Leaders 3 — Final Competition" },
-  { src: event269.url, caption: "Project showcase with industry leaders" },
-  { src: event278.url, caption: "INJAZ Egypt — The Company Program pitch" },
-  { src: event273.url, caption: "Judging panel presentation" },
-  { src: event271.url, caption: "Startup showcase day" },
-  { src: event270.url, caption: "Achievement zone — innovation expo" },
-  { src: event277.url, caption: "Solix.eg booth setup" },
-  { src: event274.url, caption: "Smart Solar Station prototype on display" },
+  { src: event275, caption: "Solix.eg exhibition booth" },
+  { src: event276, caption: "Climate Leaders 3 — Final Competition" },
+  { src: event269, caption: "Project showcase with industry leaders" },
+  { src: event278, caption: "INJAZ Egypt — The Company Program pitch" },
+  { src: event273, caption: "Judging panel presentation" },
+  { src: event271, caption: "Startup showcase day" },
+  { src: event270, caption: "Achievement zone — innovation expo" },
+  { src: event277, caption: "Solix.eg booth setup" },
+  { src: event274, caption: "Smart Solar Station prototype on display" },
 ];
 
 function Events() {
@@ -943,7 +943,7 @@ function Footer() {
         <div className="grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
           <div>
             <div className="flex items-center gap-2">
-              <img src={solixLogo.url} alt="SOLIX logo" className="h-12 w-auto object-contain" />
+              <img src={solixLogo} alt="SOLIX logo" className="h-12 w-auto object-contain" />
             </div>
             <p className="mt-4 text-sm text-muted-foreground max-w-sm">Powered by Sun, Cooled by Nature — smart solar shading for public spaces.</p>
           </div>
