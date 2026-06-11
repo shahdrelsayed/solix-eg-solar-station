@@ -1,10 +1,5 @@
 {
-  "version": 2,
-  "framework": "nitro",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/nitro"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
