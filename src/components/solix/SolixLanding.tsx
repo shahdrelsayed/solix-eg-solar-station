@@ -97,6 +97,7 @@ function Nav({ dark, toggle }: { dark: boolean; toggle: () => void }) {
     { href: "#roadmap", label: "Roadmap" },
     { href: "#contact", label: "Contact" },
   ];
+  
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}>
       <div className={`mx-auto max-w-7xl px-6 md:px-10 ${scrolled ? "glass rounded-2xl shadow-soft" : ""} transition-all`}>
@@ -726,25 +727,32 @@ function Cost() {
 }
 
 /* ---------- Team ---------- */
-import shahdAsset from "@/assets/team/shahd.png";
-import melessiaAsset from "@/assets/team/melessia.png";
-import haneenAsset from "@/assets/team/haneen.png";
-import sohilaAsset from "@/assets/team/sohila.png";
-import event269 from "@/assets/events/event-269.jpg";
-import event270 from "@/assets/events/event-270.jpg";
-import event271 from "@/assets/events/event-271.jpg";
-import event273 from "@/assets/events/event-273.jpg";
-import event274 from "@/assets/events/event-274.jpg";
-import event275 from "@/assets/events/event-275.jpg";
-import event276 from "@/assets/events/event-276.jpg";
-import event277 from "@/assets/events/event-277.jpg";
-import event278 from "@/assets/events/event-278.jpg";
+/* ---------- Team ---------- */
+import shahdImg from "@/assets/team/shahd.png";
+import melessiaImg from "@/assets/team/melessia.png";
+import haneenImg from "@/assets/team/haneen.png";
+import sohilaImg from "@/assets/team/sohila.png";
+
+
+
+/* ---------- Events ---------- */
+const eventGallery = [
+  { src: "/events/event-275.png", caption: "Solix.eg exhibition booth" },
+  { src: "/events/event-276.png", caption: "Climate Leaders 3 — Final Competition" },
+  { src: "/events/event-269.png", caption: "Project showcase with industry leaders" },
+  { src: "/events/event-278.png", caption: "INJAZ Egypt — The Company Program pitch" },
+  { src: "/events/event-273.png", caption: "Judging panel presentation" },
+  { src: "/events/event-271.png", caption: "Startup showcase day" },
+  { src: "/events/event-270.png", caption: "Achievement zone — innovation expo" },
+  { src: "/events/event-277.png", caption: "Solix.eg booth setup" },
+  { src: "/events/event-274.png", caption: "Smart Solar Station prototype on display" },
+];
 
 const team = [
-  { name: "Shahd Rady", role: "Co-founder", photo: melessiaAsset },
-  { name: "Melessia Medhat", role: "Engineering", photo: shahdAsset },
-  { name: "Haneen Mostafa", role: "Sustainability", photo: haneenAsset },
-  { name: "Sohila Emad", role: "Operations", photo: sohilaAsset },
+  { name: "Shahd Rady", role: "Co-founder", photo: shahdImg },
+  { name: "Melessia Medhat", role: "Engineering", photo: melessiaImg },
+  { name: "Haneen Mostafa", role: "Sustainability", photo: haneenImg },
+  { name: "Sohila Emad", role: "Operations", photo: sohilaImg },
 ];
 
 function Team() {
@@ -792,17 +800,7 @@ function Contact() {
   return ContactImpl();
 }
 
-const eventGallery = [
-  { src: event275, caption: "Solix.eg exhibition booth" },
-  { src: event276, caption: "Climate Leaders 3 — Final Competition" },
-  { src: event269, caption: "Project showcase with industry leaders" },
-  { src: event278, caption: "INJAZ Egypt — The Company Program pitch" },
-  { src: event273, caption: "Judging panel presentation" },
-  { src: event271, caption: "Startup showcase day" },
-  { src: event270, caption: "Achievement zone — innovation expo" },
-  { src: event277, caption: "Solix.eg booth setup" },
-  { src: event274, caption: "Smart Solar Station prototype on display" },
-];
+
 
 function Events() {
   return (
