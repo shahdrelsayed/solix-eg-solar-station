@@ -239,7 +239,7 @@ function Hero() {
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-glow">
             <img
               src={podImage}
-              alt="SOLIX solar-powered shading pod in a smart-city park"
+                alt="SOLIX solar-powered shading pod in a smart-city park"
               width={1536}
               height={1152}
               className="size-full object-cover"
